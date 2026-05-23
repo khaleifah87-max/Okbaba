@@ -12,7 +12,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   description: "Ok Baba - Find trusted home service technicians in the UAE",
   userInterfaceStyle: "automatic",
   newArchEnabled: true,
-  newArchEnabled: false,
+  newArchEnabled: true,
   extra: {
     ...(config.extra ?? {}),
     eas: {
