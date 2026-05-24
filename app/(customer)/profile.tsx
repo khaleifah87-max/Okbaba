@@ -349,7 +349,7 @@ export default function ProfileScreen() {
             }}
           >
             <LogOut size={20} color="#DC2626" />
-            <Text style={{ fontSize: 15, fontWeight: "700", color: "#DC2626" }}>{t("logout")}</Text>
+            <Text style={{ fontSize: 15, fontWeight: "700", color: "#6B7280" }}>{t("logout")}</Text>
           </TouchableOpacity>
 
           {/* Legal Section */}
