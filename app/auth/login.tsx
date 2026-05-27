@@ -12,7 +12,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { useRouter } from "expo-router";
-import { ChevronLeft, Mail, Lock, Eye, EyeOff, AlertTriangle } from "lucide-react-native";
+import { ChevronLeft, Mail, Lock, Eye, EyeOff, AlertTriangle, Phone } from "lucide-react-native";
 import { useTranslation } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -504,7 +504,27 @@ export default function LoginScreen() {
                 )}
               </TouchableOpacity>
 
-              {/* Register Link */}
+             {/* Phone Login Button */}
+<TouchableOpacity
+  style={{
+    backgroundColor: "#FFFFFF",
+    borderRadius: 14,
+    height: 54,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 2,
+    borderColor: "#1A3A6B",
+    marginBottom: 24,
+    flexDirection: "row",
+    gap: 8,
+  }}
+  onPress={() => router.push("/auth/phone-login")}
+>
+  <Phone size={20} color="#1A3A6B" />
+  <Text style={{ fontSize: 16, fontWeight: "700", color: "#1A3A6B" }}>
+    تسجيل الدخول برقم الهاتف
+  </Text>
+</TouchableOpacity> {/* Register Link */}
               <View style={{ alignItems: "center" }}>
                 <Text style={{ color: "#6B7280", fontSize: 14 }}>
                   {t("alreadyHaveAccount")}{" "}
