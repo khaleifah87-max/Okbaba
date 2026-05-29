@@ -40,12 +40,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     edgeToEdgeEnabled: true,
     predictiveBackGestureEnabled: false,
-  },
-  web: {
-    bundler: "metro",
-    output: "static",
-    favicon: "./assets/images/favicon.png",
-  },
+    config: {
+      googleMaps: {
+        apiKey: "AIzaSyAYhwTPnogc-ndPIn-LzXcZ4FL"
+      }
+    },
   plugins: [
     "expo-router",
     "expo-font",
@@ -56,7 +55,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         locationAlwaysAndWhenInUsePermission:
           "Ok Baba needs your location to show your position to customers.",
         locationWhenInUsePermission:
-          "Ok Baba needs your location to show your position to customers.",
+          "Ok Bba needs your location to show your position to customers.",
         isAndroidBackgroundLocationEnabled: false,
       },
     ],
