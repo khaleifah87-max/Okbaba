@@ -113,6 +113,25 @@ export default function TechnicianDetailScreen() {
     "8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM",
     "1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM",
   ];
+  if (!user) {
+  return (
+    <View style={{ flex: 1, backgroundColor: "#F5F7FA", alignItems: "center", justifyContent: "center", padding: 32 }}>
+      <Text style={{ fontSize: 48, marginBottom: 16 }}>🔒</Text>
+      <Text style={{ fontSize: 20, fontWeight: "800", color: "#1A1A2E", marginBottom: 8, textAlign: "center" }}>
+        سجل دخولك أولاً
+      </Text>
+      <Text style={{ fontSize: 14, color: "#6B7280", marginBottom: 32, textAlign: "center" }}>
+        للتواصل مع الفنيين يجب تسجيل الدخول
+      </Text>
+      <TouchableOpacity
+        onPress={() => router.replace("/auth/welcome")}
+        style={{ backgroundColor: "#1A3A6B", borderRadius: 14, paddingVertical: 14, paddingHorizontal: 32 }}
+      >
+        <Text style={{ color: "#FFFFFF", fontWeight: "700", fontSize: 16 }}>تسجيل الدخول</Text>
+      </TouchableOpacity>
+    </View>
+  );
+  }
   function buildISO(): string | null {
     if (selectedDay === null || !selectedTime) return null;
     const d = new Date(days[selectedDay]);
