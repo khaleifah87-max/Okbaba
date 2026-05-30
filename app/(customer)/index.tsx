@@ -38,12 +38,25 @@ import { useAuth } from "@/context/AuthContext";
 import { TechnicianSkeletonList } from "@/components/TechnicianCardSkeleton";
 
 const CATEGORIES = [
-  { key: "plumber", icon: Wrench, color: "#3B82F6", bg: "#DBEAFE" },
-  { key: "electrician", icon: Zap, color: "#F59E0B", bg: "#FEF3C7" },
-  { key: "acTechnician", icon: Wind, color: "#06B6D4", bg: "#CFFAFE" },
-  { key: "cleaner", icon: Sparkles, color: "#10B981", bg: "#D1FAE5" },
-  { key: "carpenter", icon: Hammer, color: "#8B5CF6", bg: "#EDE9FE" },
-  { key: "more", icon: Grid2x2, color: "#6B7280", bg: "#F3F4F6" },
+  { key: "gardens", label: "الحدائق", emoji: "🌿", color: "#16A34A", bg: "#DCFCE7" },
+  { key: "pools", label: "المسابح", emoji: "🏊", color: "#0891B2", bg: "#CFFAFE" },
+  { key: "moving", label: "نقل العفش", emoji: "🚚", color: "#7C3AED", bg: "#EDE9FE" },
+  { key: "pest", label: "مكافحة الحشرات", emoji: "🐛", color: "#DC2626", bg: "#FEE2E2" },
+  { key: "electrician", label: "الكهرباء", emoji: "⚡", color: "#F59E0B", bg: "#FEF3C7" },
+  { key: "plumber", label: "السباكة", emoji: "🔧", color: "#3B82F6", bg: "#DBEAFE" },
+  { key: "ac", label: "التكييف", emoji: "❄️", color: "#06B6D4", bg: "#CFFAFE" },
+  { key: "cleaning", label: "النظافة", emoji: "🧹", color: "#10B981", bg: "#D1FAE5" },
+  { key: "carpentry", label: "النجارة", emoji: "🪵", color: "#92400E", bg: "#FEF3C7" },
+  { key: "painting", label: "الدهان", emoji: "🎨", color: "#8B5CF6", bg: "#EDE9FE" },
+  { key: "appliances", label: "أجهزة منزلية", emoji: "📺", color: "#1D4ED8", bg: "#DBEAFE" },
+  { key: "contractors", label: "مقاولين", emoji: "🏗️", color: "#374151", bg: "#F3F4F6" },
+  { key: "cameras", label: "تركيب كاميرات", emoji: "📷", color: "#0F172A", bg: "#E2E8F0" },
+  { key: "water", label: "سيارة مياه", emoji: "💧", color: "#0369A1", bg: "#E0F2FE" },
+  { key: "tires", label: "خدمات الطرق", emoji: "🚗", color: "#B45309", bg: "#FEF3C7" },
+  { key: "delivery", label: "توصيل طلبات", emoji: "📦", color: "#F97316", bg: "#FFEDD5" },
+  { key: "carpenters", label: "نجارين", emoji: "🔨", color: "#78350F", bg: "#FEF3C7" },
+  { key: "gas", label: "غاز طهي", emoji: "🔥", color: "#DC2626", bg: "#FEE2E2" },
+  { key: "tanks", label: "تنظيف خزانات", emoji: "🪣", color: "#0891B2", bg: "#CFFAFE" },
 ];
 
 const HOW_IT_WORKS = [
@@ -329,66 +342,57 @@ export default function CustomerHomeScreen() {
           </SafeAreaView>
         </View>
 
-        {/* ═══════════════ CATEGORIES ═══════════════ */}
-        <View style={{ backgroundColor: "#FFFFFF", paddingTop: 20, paddingBottom: 20 }}>
-          <View
-            style={{
-              flexDirection: isRTL ? "row-reverse" : "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              paddingHorizontal: 20,
-              marginBottom: 16,
-            }}
-          >
-            <Text style={{ fontSize: 17, fontWeight: "700", color: "#1A1A2E" }}>Our Services</Text>
-            <TouchableOpacity activeOpacity={0.7} onPress={() => router.push("/(customer)/search")}>
-              <Text style={{ fontSize: 13, color: "#1A3A6B", fontWeight: "600" }}>See All</Text>
-            </TouchableOpacity>
-          </View>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingHorizontal: 20, gap: 14 }}
-          >
-            {CATEGORIES.map((cat) => {
-              const Icon = cat.icon;
-              const isSelected = selectedCategory === cat.key;
-              return (
-                <TouchableOpacity
-                  key={cat.key}
-                  onPress={() => setSelectedCategory(isSelected ? null : cat.key)}
-                  activeOpacity={0.7}
-                  style={{ alignItems: "center", gap: 8 }}
-                >
-                  <View
-                    style={{
-                      width: 62,
-                      height: 62,
-                      borderRadius: 18,
-                      backgroundColor: isSelected ? "#1A3A6B" : cat.bg,
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderWidth: isSelected ? 0 : 1.5,
-                      borderColor: isSelected ? "transparent" : "rgba(0,0,0,0.05)",
-                    }}
-                  >
-                    <Icon size={26} color={isSelected ? "#F5A623" : cat.color} />
-                  </View>
-                  <Text
-                    style={{
-                      fontSize: 11,
-                      fontWeight: isSelected ? "700" : "600",
-                      color: isSelected ? "#1A3A6B" : "#374151",
-                      textAlign: "center",
-                    }}
-                  >
-                    {t(cat.key as any)}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </ScrollView>
-        </View>
+       {/* ═══════════════ CATEGORIES GRID ═══════════════ */}
+<View style={{ backgroundColor: "#FFFFFF", paddingTop: 20, paddingBottom: 20 }}>
+  <View style={{
+    flexDirection: isRTL ? "row-reverse" : "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    marginBottom: 16,
+  }}>
+    <Text style={{ fontSize: 17, fontWeight: "700", color: "#1A1A2E" }}>
+      خدماتنا
+    </Text>
+  </View>
+  <View style={{
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingHorizontal: 12,
+    gap: 10,
+  }}>
+    {CATEGORIES.map((cat) => {
+      const isSelected = selectedCategory === cat.key;
+      return (
+        <TouchableOpacity
+          key={cat.key}
+          onPress={() => setSelectedCategory(isSelected ? null : cat.key)}
+          activeOpacity={0.7}
+          style={{
+            width: "30%",
+            alignItems: "center",
+            backgroundColor: isSelected ? "#1A3A6B" : cat.bg,
+            borderRadius: 16,
+            paddingVertical: 14,
+            paddingHorizontal: 8,
+            borderWidth: isSelected ? 0 : 1,
+            borderColor: "rgba(0,0,0,0.05)",
+          }}
+        >
+          <Text style={{ fontSize: 28, marginBottom: 6 }}>{cat.emoji}</Text>
+          <Text style={{
+            fontSize: 11,
+            fontWeight: "700",
+            color: isSelected ? "#FFFFFF" : "#1A1A2E",
+            textAlign: "center",
+          }} numberOfLines={2}>
+            {cat.label}
+          </Text>
+        </TouchableOpacity>
+      );
+    })}
+  </View>
+</View>
 
         {/* ═══════════════ HOW IT WORKS ═══════════════ */}
         <View style={{ backgroundColor: "#F0F4FF", paddingVertical: 24, paddingHorizontal: 20, marginTop: 8 }}>
