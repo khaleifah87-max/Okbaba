@@ -179,7 +179,23 @@ export default function WelcomeScreen() {
             </TouchableOpacity>
           </View>
 
-          {/* Sign In Link */}
+        {/* Browse as Guest */}
+<TouchableOpacity
+  onPress={() => router.replace("/(customer)")}
+  style={{
+    alignItems: "center",
+    paddingVertical: 14,
+    marginBottom: 16,
+    borderRadius: 14,
+    borderWidth: 1.5,
+    borderColor: "rgba(255,255,255,0.25)",
+  }}
+>
+  <Text style={{ color: "rgba(255,255,255,0.7)", fontSize: 15, fontWeight: "600" }}>
+    تصفح بدون تسجيل 👀
+  </Text>
+</TouchableOpacity>
+ {/* Sign In Link */}
           <View style={{ alignItems: "center", paddingBottom: 24 }}>
             <Text style={{ color: "rgba(255,255,255,0.6)", fontSize: 14 }}>
               {t("alreadyHaveAccount")}{" "}
