@@ -9,12 +9,13 @@ import {
   TextInput,
   Alert,
   ActivityIndicator,
-  Modal,
+  Modal,Linking,
 } from "react-native";
+
 import { KeyboardAvoidingView } from "react-native";
 import {
   ArrowLeft, Star, MapPin, CheckCircle, Clock,
-  Wrench, DollarSign, MessageSquare, Shield,
+  Wrench, DollarSign, MessageSquare, Shield, Phone,
 } from "lucide-react-native";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import { useTranslation } from "@/lib/i18n";
@@ -510,7 +511,28 @@ export default function TechnicianDetailScreen() {
           </View>
         </View>
       </ScrollView>
-
+{/* WhatsApp Button */}
+{tech?.phone && (
+  <TouchableOpacity
+    activeOpacity={0.85}
+    onPress={() => Linking.openURL(`https://wa.me/${tech.phone?.replace(/\D/g, "")}`)}
+    style={{
+      backgroundColor: "#25D366",
+      borderRadius: 16,
+      paddingVertical: 17,
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "center",
+      gap: 10,
+      marginBottom: 10,
+    }}
+  >
+    <Phone size={18} color="#FFFFFF" />
+    <Text style={{ color: "#FFFFFF", fontSize: 17, fontWeight: "800" }}>
+      واتساب
+    </Text>
+  </TouchableOpacity>
+)}
       {/* Sticky Book Now Button */}
       <View style={{
         position: "absolute",
