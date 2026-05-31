@@ -229,11 +229,7 @@ export default function CustomerHomeScreen() {
               >
                 {/* Logo + Greeting */}
                 <View style={{ flexDirection: isRTL ? "row-reverse" : "row", alignItems: "center", gap: 12 }}>
-                  <Image
-                    source={require("@/assets/images/1000219939.png")}
-                    style={{ width: 44, height: 44, borderRadius: 12 }}
-                    resizeMode="contain"
-                  />
+                 
                   <View>
                     <Text style={{ color: "rgba(255,255,255,0.65)", fontSize: 12, fontWeight: "500" }}>
                       {t("goodMorning")} 👋
