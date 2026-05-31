@@ -473,7 +473,88 @@ export default function SubscriptionScreen() {
               </TouchableOpacity>
             );
           })}
+{/* Payment Methods */}
+<View style={{
+  backgroundColor: "#FFFFFF",
+  borderRadius: 18,
+  padding: 20,
+  marginBottom: 16,
+  shadowColor: "#000",
+  shadowOpacity: 0.04,
+  shadowRadius: 8,
+  elevation: 2,
+}}>
+  <Text style={{
+    fontSize: 16, fontWeight: "800", color: "#1A1A2E",
+    marginBottom: 16, textAlign: isRTL ? "right" : "left",
+  }}>
+    طرق الدفع المتاحة 💳
+  </Text>
 
+  {/* PayBy */}
+  <View style={{
+    flexDirection: isRTL ? "row-reverse" : "row",
+    alignItems: "center", gap: 12,
+    backgroundColor: "#F0FDF4", borderRadius: 12,
+    padding: 12, marginBottom: 10,
+    borderWidth: 1, borderColor: "#86EFAC",
+  }}>
+    <Text style={{ fontSize: 28 }}>💚</Text>
+    <View style={{ flex: 1 }}>
+      <Text style={{ fontSize: 15, fontWeight: "700", color: "#1A1A2E" }}>PayBy</Text>
+      <Text style={{ fontSize: 12, color: "#6B7280" }}>
+        إيداع نقدي من أي بقالة • بدون بطاقة بنكية
+      </Text>
+    </View>
+    <View style={{
+      backgroundColor: "#059669", paddingHorizontal: 8,
+      paddingVertical: 3, borderRadius: 8,
+    }}>
+      <Text style={{ color: "#FFFFFF", fontSize: 11, fontWeight: "700" }}>الأشهر</Text>
+    </View>
+  </View>
+
+  {/* Bank Transfer */}
+  <View style={{
+    flexDirection: isRTL ? "row-reverse" : "row",
+    alignItems: "center", gap: 12,
+    backgroundColor: "#EFF6FF", borderRadius: 12,
+    padding: 12, marginBottom: 10,
+    borderWidth: 1, borderColor: "#BFDBFE",
+  }}>
+    <Text style={{ fontSize: 28 }}>🏦</Text>
+    <View style={{ flex: 1 }}>
+      <Text style={{ fontSize: 15, fontWeight: "700", color: "#1A1A2E" }}>تحويل بنكي</Text>
+      <Text style={{ fontSize: 12, color: "#6B7280" }}>
+        Emirates NBD • FAB • ADCB
+      </Text>
+    </View>
+  </View>
+
+  {/* e& money */}
+  <View style={{
+    flexDirection: isRTL ? "row-reverse" : "row",
+    alignItems: "center", gap: 12,
+    backgroundColor: "#FFF7ED", borderRadius: 12,
+    padding: 12,
+    borderWidth: 1, borderColor: "#FED7AA",
+  }}>
+    <Text style={{ fontSize: 28 }}>📱</Text>
+    <View style={{ flex: 1 }}>
+      <Text style={{ fontSize: 15, fontWeight: "700", color: "#1A1A2E" }}>e& money</Text>
+      <Text style={{ fontSize: 12, color: "#6B7280" }}>
+        محفظة etisalat الرقمية • سريع وسهل
+      </Text>
+    </View>
+  </View>
+
+  <Text style={{
+    fontSize: 12, color: "#9CA3AF", textAlign: "center",
+    marginTop: 12,
+  }}>
+    بعد الدفع أرسل إيصالك عبر واتساب لتفعيل اشتراكك فوراً ✅
+  </Text>
+</View>
           {/* Contact Button */}
           <TouchableOpacity
             activeOpacity={0.85}
