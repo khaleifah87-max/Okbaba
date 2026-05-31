@@ -348,7 +348,7 @@ export default function CustomerHomeScreen() {
     marginBottom: 16,
   }}>
     <Text style={{ fontSize: 17, fontWeight: "700", color: "#1A1A2E" }}>
-      خدماتنا
+      {t("ourServices")}
     </Text>
   </View>
   <View style={{
@@ -390,10 +390,10 @@ export default function CustomerHomeScreen() {
   </View>
 </View>
 
-        {/* ═══════════════ HOW IT WORKS ═══════════════ */}
+       {/* ═══════════════ HOW IT WORKS ═══════════════ */}
         <View style={{ backgroundColor: "#F0F4FF", paddingVertical: 24, paddingHorizontal: 20, marginTop: 8 }}>
           <Text style={{ fontSize: 17, fontWeight: "700", color: "#1A1A2E", marginBottom: 16 }}>
-            How It Works
+          {t("howItWorks")}
           </Text>
           <View style={{ flexDirection: isRTL ? "row-reverse" : "row", gap: 10 }}>
             {HOW_IT_WORKS.map((step, idx) => {
