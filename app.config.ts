@@ -45,6 +45,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         apiKey: "AIzaSyAYhwTPnogc-ndPIn-LzXcZ4FL"
       }
     },
+  },
   plugins: [
     "expo-router",
     "expo-font",
