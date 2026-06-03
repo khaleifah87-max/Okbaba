@@ -340,16 +340,18 @@ export default function ProfileScreen() {
             style={{
               marginHorizontal: 20,
               marginTop: 16,
-              backgroundColor: "#FEE2E2",
+              backgroundColor: "#F5F7FA",
               borderRadius: 14,
+              borderWidth: 1.5,
+borderColor: "#1A3A6B",
               padding: 16,
               flexDirection: isRTL ? "row-reverse" : "row",
               alignItems: "center",
               gap: 12,
             }}
           >
-            <LogOut size={20} color="#DC2626" />
-            <Text style={{ fontSize: 15, fontWeight: "700", color: "#6B7280" }}>{t("logout")}</Text>
+            <LogOut size={20} color="#1A3A6B" />
+<Text style={{ fontSize: 15, fontWeight: "700", color: "#1A3A6B" }}>{t("logout")}</Text>
           </TouchableOpacity>
 
           {/* Legal Section */}
